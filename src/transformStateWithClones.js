@@ -30,9 +30,10 @@ function transformStateWithClones(state, actions) {
       case 'clear':
         newState = {};
         break;
-    }
 
-    // Обновляем текущее состояние
+      default:
+        throw new Error(`Unhandled action type: ${operation.type}`);
+    }
     currentState = newState;
 
     // Добавляем копию нового состояния в результат
